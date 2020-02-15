@@ -26,7 +26,7 @@ namespace RepositoryTest
 
         public IEnumerable<Course> GetAll()
         {
-            return new List<Course>();
+            return _courses;
         }
 
         public void Save(Course item)

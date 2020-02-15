@@ -108,7 +108,6 @@ namespace RepositoryTest.Tests
             Assert.AreEqual(result[0].Name, "Amy");
             Assert.AreEqual(result[1].Id, 2);
             Assert.AreEqual(result[1].Name, "Bob");
-                     
         }
     }
 }
