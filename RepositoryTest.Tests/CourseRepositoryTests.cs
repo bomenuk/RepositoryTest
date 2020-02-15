@@ -103,5 +103,12 @@ namespace RepositoryTest.Tests
             result = courseRepository.Get("Math");
             Assert.IsNull(result);
         }
+
+        [Test]
+        public void GetAll_Should_Return_EmptyList_When_No_Records()
+        {
+            var result = courseRepository.GetAll();
+            Assert.IsEmpty(result);
+        }
     }
 }
