@@ -4,18 +4,18 @@ namespace RepositoryTest.Tests
 {
     public class StudentRepositoryTests
     {
-        StudentRepository<Student, int> studentRepository = null;
+        StudentRepository studentRepository = null;
 
         [SetUp]
         public void Setup()
         {
-            studentRepository = new StudentRepository<Student, int>();
+            studentRepository = new StudentRepository();
         }
 
         [Test]
         public void Get_Should_Return_Null_When_No_Records()
         {
-            var result = studentRepository.Get();
+            var result = studentRepository.Get(1);
             Assert.IsNull(result);
         }
 
@@ -89,7 +89,7 @@ namespace RepositoryTest.Tests
         [Test]
         public void GetAll_Should_Return_Null_When_No_Records()
         {
-            var studentRepository = new StudentRepository<Student, int>();
+            var studentRepository = new StudentRepository();
 
             var result = studentRepository.GetAll();
             Assert.IsNull(result);
@@ -98,7 +98,7 @@ namespace RepositoryTest.Tests
         [Test]
         public void GetAll_Should_Return_Correct_Result_After_Added_Records()
         {
-            var studentRepository = new StudentRepository<Student, int>();
+            var studentRepository = new StudentRepository();
 
             var result = studentRepository.GetAll();
             Assert.IsNull(result);
