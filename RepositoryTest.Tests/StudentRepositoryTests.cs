@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 
 namespace RepositoryTest.Tests
 {
@@ -100,8 +101,13 @@ namespace RepositoryTest.Tests
         {
             var studentRepository = new StudentRepository();
 
+            var student = new Student() { Id = 1, Name = "Amy" };
+            studentRepository.Save(student);
+            student = new Student() { Id = 2, Name = "Bob" };
+            studentRepository.Save(student);
             var result = studentRepository.GetAll();
-            Assert.IsNull(result);
+            Assert.IsNotEmpty(result);
+            Assert.Equals(result.Count(), 2);
         }
     }
 }
