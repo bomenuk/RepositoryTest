@@ -14,7 +14,7 @@ namespace RepositoryTest
 
         public Course Get(string id)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IEnumerable<Course> GetAll()
