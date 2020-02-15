@@ -27,7 +27,15 @@ namespace RepositoryTest
 
         public void Save(Course item)
         {
-            _courses.Add(item);
+            var existingCourse = _courses.FirstOrDefault(s => s.Id == item.Id);
+            if (existingCourse == null)
+            {
+                _courses.Add(item);
+            }
+            else
+            {
+                existingCourse.LengthInWeeks = item.LengthInWeeks;
+            }
         }
     }
 }
