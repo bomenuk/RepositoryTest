@@ -7,6 +7,8 @@ namespace RepositoryTest
 {
     public class CourseRepository : IRepository<Course, string>
     {
+        private List<Course> _courses = new List<Course>();
+
         public void Delete(string id)
         {
             throw new NotImplementedException();
@@ -24,7 +26,7 @@ namespace RepositoryTest
 
         public void Save(Course item)
         {
-            throw new NotImplementedException();
+            _courses.Add(item);
         }
     }
 }
