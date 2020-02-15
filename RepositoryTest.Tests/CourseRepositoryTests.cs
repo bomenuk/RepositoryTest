@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 
 namespace RepositoryTest.Tests
 {
@@ -109,6 +110,23 @@ namespace RepositoryTest.Tests
         {
             var result = courseRepository.GetAll();
             Assert.IsEmpty(result);
+        }
+
+        [Test]
+        public void GetAll_Should_Return_Correct_Result_After_Added_Records()
+        {
+            var course = new Course() { Id = "English", LengthInWeeks = 50 };
+            courseRepository.Save(course);
+            course = new Course() { Id = "History", LengthInWeeks = 20 };
+            courseRepository.Save(course);
+            var result = courseRepository.GetAll().ToList();
+            Assert.IsNotEmpty(result);
+            Assert.AreEqual(result.Count(), 2);
+            Assert.AreEqual(result[0].Id, "English");
+            Assert.AreEqual(result[0].LengthInWeeks, 50);
+            Assert.AreEqual(result[1].Id, "History");
+            Assert.AreEqual(result[1].LengthInWeeks, 20);
+
         }
     }
 }
