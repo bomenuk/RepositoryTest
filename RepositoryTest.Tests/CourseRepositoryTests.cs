@@ -47,5 +47,34 @@ namespace RepositoryTest.Tests
             Assert.AreEqual(result.Id, "PE");
             Assert.AreEqual(result.LengthInWeeks, 12);
         }
+
+        [Test]
+        public void Save_Should_Add_Record_Into_Repository_When_Its_New()
+        {
+            var course = new Course() { Id = "Math", LengthInWeeks = 10 };
+            courseRepository.Save(course);
+            var result = courseRepository.Get("Math");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Id, "Math");
+            Assert.AreEqual(result.LengthInWeeks, 10);
+        }
+
+        [Test]
+        public void Save_Should_Update_Record_Into_Repository_When_Exist()
+        {
+            var course = new Course() { Id = "Math", LengthInWeeks = 10 };
+            courseRepository.Save(course);
+            var result = courseRepository.Get("Math");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Id, "Math");
+            Assert.AreEqual(result.LengthInWeeks, 10);
+
+            course = new Course() { Id = "Math", LengthInWeeks = 8 };
+            courseRepository.Save(course);
+            result = courseRepository.Get("Math");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Id, "Math");
+            Assert.AreEqual(result.LengthInWeeks, 8);
+        }
     }
 }
