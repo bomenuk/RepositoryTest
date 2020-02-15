@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RepositoryTest
+namespace RepositoryTest.Contracts
 {
     // Please create an in memory implementation of IRepository<T, I> 
 
