@@ -88,5 +88,20 @@ namespace RepositoryTest.Tests
             Assert.AreEqual(result.Id, "Math");
             Assert.AreEqual(result.LengthInWeeks, 10);
         }
+
+        [Test]
+        public void Delete_Should_Remove_Record_From_Repository_When_Exist()
+        {
+            var course = new Course() { Id = "Math", LengthInWeeks = 10 };
+            courseRepository.Save(course);
+            var result = courseRepository.Get("Math");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Id, "Math");
+            Assert.AreEqual(result.LengthInWeeks, 10);
+
+            courseRepository.Delete("Math");
+            result = courseRepository.Get("Math");
+            Assert.IsNull(result);
+        }
     }
 }
