@@ -19,6 +19,17 @@ namespace RepositoryTest.Tests
             Assert.IsNull(result);
         }
 
-        
+        [Test]
+        public void Get_Should_Return_Correct_Record_After_Add_1_Record()
+        {
+            var course = new Course() { Id = "Math", LengthInWeeks = 4 };
+            courseRepository.Save(course);
+            var result = courseRepository.Get("Math");
+            Assert.IsNotNull(result);
+            Assert.AreEqual(result.Id, "Math");
+            Assert.AreEqual(result.LengthInWeeks, 4);
+        }
+
+
     }
 }
