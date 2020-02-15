@@ -26,7 +26,7 @@ namespace RepositoryTest
 
         public IEnumerable<Course> GetAll()
         {
-            throw new NotImplementedException();
+            return new List<Course>();
         }
 
         public void Save(Course item)
