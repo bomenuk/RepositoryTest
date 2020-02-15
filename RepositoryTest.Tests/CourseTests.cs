@@ -2,15 +2,15 @@
 
 namespace RepositoryTest.Tests
 {
-    public class StringIdEntityTests
+    public class CourseTests
     {
         [Test]
         public void Can_Assign_IntegerId_To_Entity()
         {
-            var entity = new StringIdEntity();
-            entity.Id = "abc";
+            var entity = new Course();
+            entity.Id = "Biology";
 
-            Assert.AreEqual(entity.Id, "abc");
+            Assert.AreEqual(entity.Id, "Biology");
         }
     }
 }

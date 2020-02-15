@@ -2,7 +2,7 @@
 
 namespace RepositoryTest
 {
-    public class IntIdEntity : IStoreable<int>
+    public class Student : IStoreable<int>
     {
         public int Id { get; set; }
     }

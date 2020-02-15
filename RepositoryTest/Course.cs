@@ -2,7 +2,7 @@
 
 namespace RepositoryTest
 {
-    public class StringIdEntity : IStoreable<string>
+    public class Course : IStoreable<string>
     {
         public string Id { get; set; }
     }

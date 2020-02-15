@@ -7,10 +7,10 @@ namespace RepositoryTest.Tests
         [Test]
         public void Can_Assign_IntegerId_To_Entity()
         {
-            var entity = new IntIdEntity();
-            entity.Id = 123;
+            var student = new Student();
+            student.Id = 1;
 
-            Assert.AreEqual(entity.Id, 123);
+            Assert.AreEqual(student.Id, 123);
         }
     }
 }
