@@ -12,7 +12,11 @@ namespace RepositoryTest
 
         public void Delete(int id)
         {
-            
+            var existingStudent = _students.FirstOrDefault(s => s.Id == id);
+            if (existingStudent != null)
+            {
+                _students.Remove(existingStudent);
+            }           
         }
 
         public Student Get(int id)
