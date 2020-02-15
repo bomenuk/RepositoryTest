@@ -14,7 +14,7 @@ namespace RepositoryTest
 
         public Student Get(int id)
         {
-            return null;
+            return new Student() { Id = 1, Name = "Amy" };
         }
 
         public IEnumerable<Student> GetAll()
