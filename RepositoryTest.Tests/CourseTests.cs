@@ -7,10 +7,10 @@ namespace RepositoryTest.Tests
         [Test]
         public void Can_Assign_IntegerId_To_Entity()
         {
-            var entity = new Course();
-            entity.Id = "Biology";
+            var course = new Course();
+            course.Id = "Biology";
 
-            Assert.AreEqual(entity.Id, "Biology");
+            Assert.AreEqual(course.Id, "Biology");
         }
     }
 }

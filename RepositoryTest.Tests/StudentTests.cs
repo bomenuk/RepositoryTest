@@ -9,8 +9,10 @@ namespace RepositoryTest.Tests
         {
             var student = new Student();
             student.Id = 1;
+            student.Name = "John";
 
-            Assert.AreEqual(student.Id, 123);
+            Assert.AreEqual(student.Id, 1);
+            Assert.AreEqual(student.Name, "John");
         }
     }
 }
