@@ -87,12 +87,12 @@ namespace RepositoryTest.Tests
         }        
 
         [Test]
-        public void GetAll_Should_Return_Null_When_No_Records()
+        public void GetAll_Should_Return_EmptyList_When_No_Records()
         {
             var studentRepository = new StudentRepository();
 
             var result = studentRepository.GetAll();
-            Assert.IsNull(result);
+            Assert.IsEmpty(result);
         }
 
         [Test]
