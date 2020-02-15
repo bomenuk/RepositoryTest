@@ -1,6 +1,7 @@
 ﻿using RepositoryTest.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RepositoryTest
@@ -16,7 +17,7 @@ namespace RepositoryTest
 
         public Course Get(string id)
         {
-            return new Course { Id = "Math", LengthInWeeks = 4 };
+            return _courses.FirstOrDefault(s => s.Id == id);
         }
 
         public IEnumerable<Course> GetAll()
