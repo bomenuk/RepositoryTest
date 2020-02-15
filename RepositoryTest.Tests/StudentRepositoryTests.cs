@@ -103,7 +103,7 @@ namespace RepositoryTest.Tests
             studentRepository.Save(student);
             var result = studentRepository.GetAll().ToList();
             Assert.IsNotEmpty(result);
-            Assert.Equals(result.Count(), 2);
+            Assert.AreEqual(result.Count(), 2);
             Assert.AreEqual(result[0].Id, 1);
             Assert.AreEqual(result[0].Name, "Amy");
             Assert.AreEqual(result[1].Id, 2);

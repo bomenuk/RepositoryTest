@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace RepositoryTest.Tests
 {
-    public class Tests
+    public class StudentTests
     {
         [Test]
         public void Can_Assign_IntegerId_To_Entity()
