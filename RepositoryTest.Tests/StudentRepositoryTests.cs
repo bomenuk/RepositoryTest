@@ -90,8 +90,6 @@ namespace RepositoryTest.Tests
         [Test]
         public void GetAll_Should_Return_EmptyList_When_No_Records()
         {
-            var studentRepository = new StudentRepository();
-
             var result = studentRepository.GetAll();
             Assert.IsEmpty(result);
         }
@@ -99,15 +97,18 @@ namespace RepositoryTest.Tests
         [Test]
         public void GetAll_Should_Return_Correct_Result_After_Added_Records()
         {
-            var studentRepository = new StudentRepository();
-
             var student = new Student() { Id = 1, Name = "Amy" };
             studentRepository.Save(student);
             student = new Student() { Id = 2, Name = "Bob" };
             studentRepository.Save(student);
-            var result = studentRepository.GetAll();
+            var result = studentRepository.GetAll().ToList();
             Assert.IsNotEmpty(result);
             Assert.Equals(result.Count(), 2);
+            Assert.AreEqual(result[0].Id, 1);
+            Assert.AreEqual(result[0].Name, "Amy");
+            Assert.AreEqual(result[1].Id, 2);
+            Assert.AreEqual(result[1].Name, "Bob");
+                     
         }
     }
 }
