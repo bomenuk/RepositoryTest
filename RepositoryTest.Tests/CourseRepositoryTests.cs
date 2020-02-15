@@ -29,7 +29,5 @@ namespace RepositoryTest.Tests
             Assert.AreEqual(result.Id, "Math");
             Assert.AreEqual(result.LengthInWeeks, 4);
         }
-
-
     }
 }

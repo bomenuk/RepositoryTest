@@ -14,7 +14,7 @@ namespace RepositoryTest
 
         public Course Get(string id)
         {
-            return null;
+            return new Course { Id = "Math", LengthInWeeks = 4 };
         }
 
         public IEnumerable<Course> GetAll()
