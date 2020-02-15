@@ -12,7 +12,7 @@ namespace RepositoryTest
 
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Course Get(string id)
