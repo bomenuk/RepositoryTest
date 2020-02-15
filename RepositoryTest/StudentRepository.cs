@@ -1,12 +1,15 @@
 ﻿using RepositoryTest.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RepositoryTest
 {
     public class StudentRepository : IRepository<Student, int>
     {
+        private List<Student> _students = new List<Student>();
+
         public void Delete(int id)
         {
             
@@ -14,7 +17,7 @@ namespace RepositoryTest
 
         public Student Get(int id)
         {
-            return new Student() { Id = 1, Name = "Amy" };
+            return _students.FirstOrDefault(s => s.Id == id);
         }
 
         public IEnumerable<Student> GetAll()
@@ -24,7 +27,7 @@ namespace RepositoryTest
 
         public void Save(Student item)
         {
-            throw new NotImplementedException();
+            _students.Add(item);
         }
     }
 }
