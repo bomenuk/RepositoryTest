@@ -9,12 +9,12 @@ namespace RepositoryTest
     {
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Student Get(int id)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IEnumerable<Student> GetAll()
