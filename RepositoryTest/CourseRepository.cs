@@ -12,7 +12,11 @@ namespace RepositoryTest
 
         public void Delete(string id)
         {
-            
+            var existingCourse = _courses.FirstOrDefault(s => s.Id == id);
+            if (existingCourse != null)
+            {
+                _courses.Remove(existingCourse);
+            }
         }
 
         public Course Get(string id)
