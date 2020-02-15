@@ -27,7 +27,15 @@ namespace RepositoryTest
 
         public void Save(Student item)
         {
-            _students.Add(item);
+            var existingStudent = _students.FirstOrDefault(s => s.Id == item.Id);
+            if(existingStudent==null)
+            {
+                _students.Add(item);
+            }
+            else
+            {
+                existingStudent.Name = item.Name;                
+            }
         }
     }
 }
