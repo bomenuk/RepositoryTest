@@ -1,10 +1,9 @@
 ﻿using RepositoryTest.Contracts;
-using System;
+using RepositoryTest.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace RepositoryTest
+namespace RepositoryTest.Repositories
 {
     public class CourseRepository : IRepository<Course, string>
     {

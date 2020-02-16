@@ -1,6 +1,6 @@
 ﻿using RepositoryTest.Contracts;
 
-namespace RepositoryTest
+namespace RepositoryTest.Entities
 {
     public class Student : IStoreable<int>
     {

@@ -1,10 +1,9 @@
 ﻿using RepositoryTest.Contracts;
-using System;
+using RepositoryTest.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace RepositoryTest
+namespace RepositoryTest.Repositories
 {
     public class StudentRepository : IRepository<Student, int>
     {
@@ -16,7 +15,7 @@ namespace RepositoryTest
             if (existingStudent != null)
             {
                 _students.Remove(existingStudent);
-            }           
+            }
         }
 
         public Student Get(int id)
@@ -32,13 +31,13 @@ namespace RepositoryTest
         public void Save(Student item)
         {
             var existingStudent = _students.FirstOrDefault(s => s.Id == item.Id);
-            if(existingStudent==null)
+            if (existingStudent == null)
             {
                 _students.Add(item);
             }
             else
             {
-                existingStudent.Name = item.Name;                
+                existingStudent.Name = item.Name;
             }
         }
     }

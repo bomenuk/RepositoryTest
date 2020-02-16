@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
+using RepositoryTest.Entities;
+using RepositoryTest.Repositories;
 using System.Linq;
 
-namespace RepositoryTest.Tests
+namespace RepositoryTest.Tests.Repositories
 {
     public class CourseRepositoryTests
     {

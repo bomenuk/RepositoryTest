@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
+using RepositoryTest.Entities;
+using RepositoryTest.Repositories;
 using System.Linq;
 
-namespace RepositoryTest.Tests
+namespace RepositoryTest.Tests.Repositories
 {
     public class StudentRepositoryTests
     {
@@ -85,7 +87,7 @@ namespace RepositoryTest.Tests
             studentRepository.Delete(1);
             result = studentRepository.Get(1);
             Assert.IsNull(result);
-        }        
+        }
 
         [Test]
         public void GetAll_Should_Return_EmptyList_When_No_Records()

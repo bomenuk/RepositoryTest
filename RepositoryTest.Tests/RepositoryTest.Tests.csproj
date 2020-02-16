@@ -14,7 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RepositoryTest.Contracts\RepositoryTest.Contracts.csproj" />
-    <ProjectReference Include="..\RepositoryTest\RepositoryTest.csproj" />
+    <ProjectReference Include="..\RepositoryTest.Repositories\RepositoryTest.Repositories.csproj" />
+    <ProjectReference Include="..\RepositoryTest\RepositoryTest.Entities.csproj" />
   </ItemGroup>
 
 </Project>
